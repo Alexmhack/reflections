@@ -1,0 +1,33 @@
+$ git init 
+this makes the directory a git repository
+
+$ git status
+this shows the initial commits and the status of the staging area
+
+$ git rm --cached <file>
+this removes a file from the staging area
+
+add those files to staging area when there is a logic you want to change in 
+the file and seperate the un-related files from each other
+
+you can add one or more than one file to the staging area.
+
+*** command type message is a way to add the commit message
+e.g. add a new object for Game class
+*** we have used 'add' not 'added', this way we are commanding,
+
+
+
+What happens when you initialize a repository? Why do you need to do it?
+
+git creates a .git folder iniside the directory.
+it is needed to make our directory a git repository through which we can use
+version-control on our projects.
+
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+staging area is that place where you put the files in which you want to make
+some logical changes and those changes are significant enough to be commited
+seperately.
+In this place you can commit the changes.
