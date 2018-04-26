@@ -1,0 +1,46 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+    Fill in your answer here
+$ viewing the files throught FC in cmd was very easy, cmd differentiated the files based on the changes btw the files.
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    Fill in your answer here
+$ having the previous versions will help us see the improvments done in the code from time to time. this will also help us learn from the past mistakes done while coding.
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+    Fill in your answer here
+manually comitting is very flexible as we can commit after a logical change manually, or we can commit after fixing typos altogether.
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+    Fill in your answer here
+saving mulitple files is best option in case when the files are inter-related to each other, making changes in multiple files will help us keep a record of the commits and the git diff, repositories are best.
+
+How can you use the commands git log and git diff to view the history of files?
+
+    Fill in your answer here
+git log gives details about all the commits if made sensibly along with the date, author, id. git diff gives the changes made to the code, can compare among commits by entering their id after git diff.
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    Fill in your answer here
+using version control helps in finding the previous code with the bugs 
+and then you can compare btw the two to find the bug present in the 
+current code.
+
+$ git log 
+$ git checkout id
+$ git diff id id
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    Fill in your answer here
+I wanna try using git for the django game project that I am working on right now.
