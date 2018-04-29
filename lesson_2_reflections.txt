@@ -67,6 +67,21 @@ then the label changes from master to easy-mode
 make some changes inside this file and add and commit those changes
 git status to check if any change is left.
 
+$ git checkout -b <new_branch_name>
+this makes a new branch and checkout that branch for us
+
+If you checkout a commit then you are in detached HEAD state
+which means you are not in any of the branches and if you make
+any changes in that commit, those changes will not exist if 
+you not remember that commit id
+
+to save those changes in that commit, you can make a new branch 
+with that commit and then save any changes
+
+$ git checkout -b <new_branch_name> 
+this will make a new branch and then add the id to the staging area
+and make commit with that id
+
 
 
 
@@ -110,4 +125,4 @@ you would like to do with your code without affecting the original
 code, e.g. you want to create a slightly different versionof your 
 game that is simple for kids and you don't want to affect the 
 original game then you can create a branch, make changes there and 
-come back to you master branch and continue with your project.
+come back to you master branch and continue with your project
