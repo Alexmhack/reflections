@@ -16,6 +16,64 @@ you can add one or more than one file to the staging area.
 e.g. add a new object for Game class
 *** we have used 'add' not 'added', this way we are commanding,
 
+$ git diff
+git diff with no arguments compares the working directory to the staging
+are
+
+$ git diff --staged
+this compares the staging area to the commit 1
+
+$ git diff commit1 commit 2
+compares the commit1 to commit2
+
+$ git checkout removes the recent changed made to the files in the 
+directory completely
+
+$ git reset --hard
+resets changes either in the working directory or the staging area
+be careful with reset command as it will reset the changes those have
+not been commit in both the working directory and the staging area
+
+before doing reset make sure you have commit the changes from the 
+working directory by typing $ git diff
+and staging area $ git diff --staged
+
+if nothing shows up that means the changes have been commited
+else commit those changes by git commit
+
+$ git checkout master
+this brings us back to the first commit and makes it the HEAD
+
+now $ git log will show all the commits ever made.
+
+to make a branch in git you can use 
+
+$ git branch 
+this command will show all the branches available.
+at first there might be only one branch 'master', this bramch is 
+created by git. You can create your branch by giving argument in 
+the same command like, 
+
+$ git branch easy-mode
+
+and then to list the branches, 
+$ git branch
+
+then checkout the branch you want to use 
+
+$ git checkout easy-mode 
+then the label changes from master to easy-mode
+
+make some changes inside this file and add and commit those changes
+git status to check if any change is left.
+
+
+
+
+
+
+
+Q. Questions :-
 
 
 What happens when you initialize a repository? Why do you need to do it?
@@ -31,3 +89,25 @@ staging area is that place where you put the files in which you want to make
 some logical changes and those changes are significant enough to be commited
 seperately.
 In this place you can commit the changes.
+
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+you may have made changes a while before and you don't remember the change
+so you can use the git diff in many ways to find the changes, there are
+many ways you can use git diff.
+then you can add the file to the staging area using the $ git add file
+
+and then you can $ git commit, to commit the changes
+you can add one file in the staging area and git diff to get the logical
+change made and commit only one logical change per commit.
+
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+branching would be very useful when you have some experiments that
+you would like to do with your code without affecting the original
+code, e.g. you want to create a slightly different versionof your 
+game that is simple for kids and you don't want to affect the 
+original game then you can create a branch, make changes there and 
+come back to you master branch and continue with your project.
