@@ -82,6 +82,79 @@ $ git checkout -b <new_branch_name>
 this will make a new branch and then add the id to the staging area
 and make commit with that id
 
+there are cases when you have two versions of the same file with 
+some logical changes and you want to merge both files.
+
+you can merge the files using the $ git merge <branch> <branch>
+
+e.g. :- $ git merge master coins
+this will merge both branches, you can see the changes in the 
+project.
+
+now all the commits from the coins branch will show up in the 
+master branch, you can access those commits from the master branch
+
+commits from different persons will show up in the master branch
+with their names and will be listed according to the timestamp
+
+if you want to look at the changes between two commits using the
+git diff and those commits are merged commits then you won't get
+absolute list of all the changes from the git diff as both the 
+commits had different parents 
+
+for these cases there is a $ git show <id>
+this command shows the changes that are in the commit as compared
+to its parent.
+
+to delete the garbage branch coins that is not needed anymore
+$ git branch -d <branch name>
+
+****NOTE*****
+before merging the branches you should check the branch which is 
+checked-out because if you merge two other branches while staying
+in any other branch then those three branches will be merged and 
+the merged version of the three branches will show up in the 
+branch that is checked-out
+
+e.g. $ git checkout branch1
+	 (branch1) $ git merge branch2 branch 3
+this will merge all three branches into branch1
+to avoid this mistakes you should always checkout the branch in 
+which you want the merged commits to show up and then run the 
+command for merging.
+
+the order with which the branches were written in the merge command
+does not matter, only the checked-out branch is crucial, git 
+will merge those branches into the checked-out branch and
+make a commit with already typed message of merge <branch name> into
+<branch name>
+
+if this error shows up :
+
+Auto-merging game.js
+CONFLICT (content): Merge conflict in game.js
+Automatic merge failed; fix conflicts and then commit the result.
+
+this means your files are not in same state
+restore your files to state using the $ git merge --abort
+
+
+***
+
+Merge conflict (Newline characters between Windows and Unix systems)
+Context: Whenever we hit the "Enter" key on the keyboard, we are actually telling the computer to insert an invisible character into our text file to indicate to the computer that there should be a new line. Unix systems adds one character called the "line feed" character or LF or \n while Windows systems adds two characters, "carriage return" and "line feed" or CRLF or \r\n. 
+
+Caroline's files have LF because her files were edited on Mac OSX, which uses LF. If a Windows user were to edit Caroline's files, the Windows text editor might convert all LF to CRLF to make editing files possible. When the Windows user merges her file with Caroline's files, a merge conflict will result due to the different LF and CRLF characters.
+
+To fix this, Windows users should set the global autocrlf attribute to true: git config --global core.autocrlf true. More information can be found here: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+
+Comparing a commit to its parent
+The command Caroline mentions to compare a commit to its parent is git show commit_id
+
+
+
+
+
 
 
 
@@ -126,3 +199,20 @@ code, e.g. you want to create a slightly different versionof your
 game that is simple for kids and you don't want to affect the 
 original game then you can create a branch, make changes there and 
 come back to you master branch and continue with your project
+
+
+What is the result of merging two branches together? Why do we 
+represent it in the diagram the way we do?
+
+merging branches helps us to combine two different branches that
+have same base but some logical changes made into the file, 
+those two version of the same file can be combined to make a single
+branch (checked-out branch) and making a commit for the merging.
+
+we represent it in that way because we are merging the coins branch
+into the master branch so the final master branch has arrows pointed
+to both the branches and the arrows go in the decreasing order into
+both the branches, as the master branch has now access to all the 
+commits inside the coins branch, so the left out branch that is not
+in the flow of the arrows the easy-mode branch which cannot be 
+accessed via master branch.
